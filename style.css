@@ -1,0 +1,301 @@
+body {
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    color: #333;
+}
+
+a {
+  text-decoration: none; 
+}
+
+/* ヘッダー */
+.header-logo img{
+    height: 20px;
+    width: 185px;
+    margin-left: 36px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height: 70px;
+    z-index: 10;
+}
+
+.header-menu {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.header-menu a {
+    margin-right: 45px;
+    color: #333;
+}
+
+.btn {
+    border-radius: 38px;
+    background-color: #F79214;
+    margin-right: 0;
+    padding: 0 20px;
+    color: #fff !important;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    height: 40px;
+}
+
+/* ハンバーガーメニュー（表示のみ） */
+.hamburger {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: default;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+.mobile-menu {
+    display: none; /* 常に非表示 */
+}
+
+/* first-view */
+.first-view {
+    position: relative;
+    width: 100%;
+    height: 739px;
+}
+
+.fv-left, .fv-right, .fv-fill, .fv-main, .fv-badge {
+    position: absolute;
+    z-index: -1;
+}
+
+/* 左上三角形 */
+.fv-left {
+    top: 0;
+    left: 0;
+}
+
+/* 右下三角形 */
+.fv-right {
+    bottom: 70px;
+    right: 0;
+}
+
+/* オレンジ枠 */
+.fv-fill {
+    top: 84px;
+    left: -70px;
+}
+
+/* メイン画像 */
+.fv-main {
+    top: -70px;
+    right: 0;
+    width: 775px;
+}
+
+/* オレンジアイコン */
+.fv-badge {
+    top: 120px;
+    right: 30%;
+    width: 204px;
+    height: 204px;
+    z-index: 2;
+}
+
+/* ボタン */
+.fv-btn {
+    position: absolute;
+    top: 420px;
+    left: 50%;
+    border-radius: 38px;
+    height: 64px;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #F79214;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* テキスト */
+h1 {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: black;
+    z-index: 2;
+}
+
+p {
+   position: absolute;
+   top: 500px;
+   left: 15%;
+   font-size: 12px;
+   line-height: 16px;
+   color: #333;
+   z-index: 2; 
+}
+
+/* hover効果 */
+.header-logo img:hover,
+.header-menu a:hover,
+.fv-btn:hover {
+    opacity: 0.8;
+}
+
+
+
+/* タブレット向け */
+@media screen and (max-width: 1024px) {
+    .header-menu {
+        display: none; /* メニュー非表示 */
+    }
+
+    .hamburger {
+        display: flex; /* ハンバーガー表示（開閉なし） */
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    /* ▼ ファーストビュー内の調整 ▼ */
+    .fv-left {
+        width: 250px;
+    }
+
+     .fv-right {
+        display: none;
+    }
+
+    .fv-main {
+        width: 500px;
+        right: 0;
+        bottom: 100px;
+        z-index: -1;
+    }
+
+    .fv-fill {
+        top: 20px;
+        left: 50px;
+        width: 50%;
+    }
+
+    .fv-badge {
+        position: absolute;
+        top: 320px; /* 少し上に */
+        right: 330px; 
+        width: 90px;
+        height: auto;
+    }
+
+    .fv-btn {
+        width: 70%;
+        top: 60%;
+        left: 40%;
+        font-size: 16px;
+        transform: translateX(-50%);
+    }
+
+    h1 {
+        position: absolute;
+        top: 320px;
+        left: 45%;
+        font-size: 20px;
+        transform: translateX(-50%);
+        text-align: left;
+        width: 80%;
+        white-space: normal;
+    }
+
+    p {
+        font-size: 12px;
+        left: 10%;
+        bottom: 10%;
+    }
+}
+
+
+/* スマホ向け */
+@media screen and (max-width: 480px) {
+    .header-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .fv-left {
+        width: 150px;
+    }
+
+    .fv-right {
+        display: none;
+    }
+
+    .fv-main {
+        max-width: 80%;
+        top: 0;
+        right: 0;
+        bottom: 40px;
+    }
+
+    .fv-badge {
+        top: 300px;
+        right: 20px;
+        width: 100px;
+        height: auto;
+    }
+
+    .fv-btn {
+        width: 90%;
+        left: 50%;
+        font-size: 14px;
+        transform: translateX(-50%);
+    }
+
+    h1 {
+        font-size: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: left;
+        width: 90%;
+        white-space: normal;
+    }
+
+    p {
+        font-size: 11px;
+        left: 5%;
+        width: 90%;
+        text-align: left;
+    }
+
+}
